@@ -1,0 +1,49 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+student-management/dist
+student-management/dist-server
+student-management/tmp
+student-management/out-tsc
+
+# dependencies
+student-management/node_modules
+student-management-server/node_modules
+student-management-server/database
+student-management-server/package-lock.json
+student-management/package-lock.json
+student-management-server/public
+
+# IDEs and editors
+student-management/.idea
+student-management/.project
+student-management/.classpath
+student-management/.c9/
+student-management/*.launch
+student-management/.settings/
+student-management/*.sublime-workspace
+
+# IDE - VSCode
+student-management/.vscode/*
+student-management/!.vscode/settings.json
+student-management/!.vscode/tasks.json
+student-management/!.vscode/launch.json
+student-management/!.vscode/extensions.json
+
+# misc
+student-management/.sass-cache
+student-management/connect.lock
+student-management/coverage
+student-management/libpeerconnection.log
+student-management/npm-debug.log
+student-management/yarn-error.log
+student-management/testem.log
+student-management/typings
+
+# e2e
+student-management/e2e/*.js
+student-management/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
