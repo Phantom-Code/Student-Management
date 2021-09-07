@@ -1,7 +1,13 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07
+ * @desc Service for communicate server for updating and retrieving data
+ */
+
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root",
@@ -9,18 +15,22 @@ import { map } from "rxjs/operators";
 export class StudentDataService {
   url = "http://localhost:3000/api/students/";
   constructor(private http: HttpClient) {}
+  // list of students with specified limit for pagination
   getStudentsByLimit(offset, limit) {
     return this.http.get(this.url, {
       params: new HttpParams().set("offset", offset).set("limit", limit),
       observe: "response",
     });
   }
+  // list of all active students
   getAllStudents() {
     return this.http.get(this.url, { observe: "response" });
   }
+  // single student by given id
   getStudentById(id: string) {
     return this.http.get(this.url + id, { observe: "response" });
   }
+  // adds student to database
   addStudent(studentData) {
     let form_data = new FormData();
     for (let key in studentData) {
@@ -28,6 +38,7 @@ export class StudentDataService {
     }
     return this.http.post(this.url, form_data, { observe: "response" });
   }
+  // updates student with given id
   updateStudent(studentData, studentId) {
     let form_data = new FormData();
     for (let key in studentData) {
@@ -37,6 +48,7 @@ export class StudentDataService {
       observe: "response",
     });
   }
+  // updates the status of student to in-active
   deactivateStudent(studentId) {
     return this.http.delete(this.url + studentId, { observe: "response" });
   }

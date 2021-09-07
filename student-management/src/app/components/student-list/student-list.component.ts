@@ -1,3 +1,10 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07
+ * @desc Retrieves data from server displays and passes to template
+ */
 import { Component, OnInit } from "@angular/core";
 import { StudentDataService } from "../../services/student-data.service";
 
@@ -11,7 +18,7 @@ export class StudentListComponent implements OnInit {
   totalStudents: number;
   currentPage: number = 0;
   itemsPerPage: number = 10;
-  // lenth of page number in pagination comp
+  // length of page number in pagination component
   maxSize: number = 5;
   loading: boolean = false;
   constructor(private studentService: StudentDataService) {}

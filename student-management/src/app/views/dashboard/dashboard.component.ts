@@ -1,3 +1,10 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07
+ * @desc Retrieves count of students & active students & also calculates percentage of male & female students
+ */
 import { Component, OnInit } from "@angular/core";
 import { StudentDataService } from "../../services/student-data.service";
 

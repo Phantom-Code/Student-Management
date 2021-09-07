@@ -1,9 +1,17 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07 
+ * @desc Main server file provides endpoints for CRUD operation on student table
+ */
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 
 const app = express();
+// database connection
 const db = require('./database/config');
 
 app.use(cors());

@@ -1,3 +1,11 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07
+ * @desc Adds student to data when form is submitted
+ */
+
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AlertComponent } from "ngx-bootstrap/alert";

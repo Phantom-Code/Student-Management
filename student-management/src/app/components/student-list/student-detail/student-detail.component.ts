@@ -1,3 +1,11 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07
+ * @desc Retrieves student data with id passed through route and passes to template
+ */
+
 import { Component, OnInit, TemplateRef } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AlertComponent } from "ngx-bootstrap/alert";

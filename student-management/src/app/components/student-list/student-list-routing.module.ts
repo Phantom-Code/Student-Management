@@ -1,3 +1,10 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07
+ * @desc Student routing  module handles routing
+ */
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AddStudentComponent } from "./add-student/add-student.component";

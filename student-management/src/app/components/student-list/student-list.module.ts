@@ -1,3 +1,10 @@
+/**
+ * @author Sourabh Kanwade
+ * @email sourabhkanwade10@gmail.com
+ * @create date 2021-09-07
+ * @modify date 2021-09-07
+ * @desc Student module for lazy loading
+ */
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 

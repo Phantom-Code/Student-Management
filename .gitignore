@@ -24,7 +24,7 @@ student-management/.settings/
 student-management/*.sublime-workspace
 
 # IDE - VSCode
-student-management/.vscode/*
+.vscode/*
 student-management/!.vscode/settings.json
 student-management/!.vscode/tasks.json
 student-management/!.vscode/launch.json
