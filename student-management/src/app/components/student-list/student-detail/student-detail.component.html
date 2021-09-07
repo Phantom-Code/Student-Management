@@ -1,0 +1,142 @@
+<div class="row align-items-center">
+  <div class="col-md-4 col-sm-8">
+    <div class="card postion-relative" style="max-width: 20rem">
+      <div class="badge badge-pill badge-success topBadge">
+        {{ student.grade }}
+      </div>
+      <img
+        class="card-img-top img-fluid bg-warning"
+        src="{{ student.picture }}"
+        alt="userImage"
+      />
+      <div class="card-body text-center">
+        <h5 class="card-title">
+          {{ student.first_name | titlecase }}&nbsp;{{
+            student.last_name | titlecase
+          }}
+        </h5>
+
+        <ul class="list-group list-group-accent">
+          <li
+            class="
+              list-group-item
+              list-group-item-secondary
+              list-group-item-accent-warning
+            "
+          >
+            <i
+              class="fa fa-user mr-1"
+              aria-hidden="true"
+              style="font-size: 18px"
+            >
+            </i>
+            Profile
+          </li>
+          <li
+            [routerLink]="['../edit']"
+            class="list-group-item list-group-item-secondary"
+            [class.list-group-item-accent-warning]="listActive"
+            (mouseover)="listActive = true"
+            (mouseout)="listActive = false"
+          >
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            Edit Student
+          </li>
+        </ul>
+        <button
+          (click)="deactivateStudent(template)"
+          type="button"
+          class="btn btn-brand btn-html5 mt-3 mx-auto"
+        >
+          <i class="fa fa-trash-o" aria-hidden="true"></i
+          ><span>Deactivate</span>
+        </button>
+        <!-- Modal Template -->
+        <ng-template #template>
+          <div class="modal-body text-center">
+            <p>Do you want to confirm?</p>
+            <button type="button" class="btn btn-default" (click)="confirm()">
+              Yes
+            </button>
+            <button type="button" class="btn btn-primary" (click)="decline()">
+              No
+            </button>
+          </div>
+        </ng-template>
+        <!-- End Modal Template -->
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 col-sm-12">
+    <div class="card">
+      <div class="card-header bg-warning"><h4>Student Details</h4></div>
+      <div class="card-body">
+        <div class="row justify-content-center">
+          <div class="col-xs-6 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-user-circle mr-2" aria-hidden="true"></i>First Name
+          </div>
+          <div class="col-xs-6 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span>{{ student.first_name | titlecase }}
+          </div>
+          <div class="col-xs-6 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-user-circle-o mr-2" aria-hidden="true"></i>Last Name
+          </div>
+          <div class="col-xs-4 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span>{{ student.last_name | titlecase }}
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-xs-6 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i>Birthday
+          </div>
+          <div class="col-xs-4 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span>{{ student.DOB | date }}
+          </div>
+          <div class="col-xs-4 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-address-card-o mr-2" aria-hidden="true"></i>Address
+          </div>
+          <div class="col-xs-4 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span>{{ student.address }}
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-xs-6 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-star-o mr-2" aria-hidden="true"></i>Grade
+          </div>
+          <div class="col-xs-4 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span>{{ student.grade }}
+          </div>
+          <div class="col-xs-6 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>Email
+          </div>
+          <div class="col-xs-4 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span>{{ student.email }}
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-xs-6 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-phone mr-2" aria-hidden="true"></i>Phone
+          </div>
+          <div class="col-xs-4 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span>{{ student.phone }}
+          </div>
+          <div class="col-xs-6 col-lg-2 col-sm-6 font-weight-bold">
+            <i class="fa fa-hashtag mr-2" aria-hidden="true"></i>Gender
+          </div>
+          <div class="col-xs-4 col-lg-4 col-sm-6">
+            <span class="mr-2">:</span
+            >{{ student.gender == "M" ? "Male" : "Female" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let alert of alerts">
+  <alert
+    [type]="alert.type"
+    [dismissOnTimeout]="alert.timeout"
+    (onClosed)="onClosed(alert)"
+    >{{ alert.msg }}</alert
+  >
+</div>
