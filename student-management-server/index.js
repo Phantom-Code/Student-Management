@@ -2,7 +2,7 @@
  * @author Sourabh Kanwade
  * @email sourabhkanwade10@gmail.com
  * @create date 2021-09-07
- * @modify date 2021-09-07 
+ * @modify date 2021-09-09 
  * @desc Main server file provides endpoints for CRUD operation on student table
  */
 const path = require('path');
@@ -28,7 +28,9 @@ let storage = multer.diskStorage({
 
 let upload = multer({ storage: storage });
 app.set('port', process.env.PORT || 3000);
-// get all students
+// get all active students
+// limit and offset for pagination
+// total for getting all students count(active & in-active)
 app.get('/api/students', (req, res) => {
     const { limit, offset, total } = req.query;
     let queryString;
